@@ -1,0 +1,151 @@
+body {
+    background-color: #CCF2F9;
+}
+div.menu {
+    display: flex;
+    border:3px solid #288F20;
+    border-radius: 60px;
+    width: 1150px;
+    height: 600px;
+    margin: auto;
+    margin-top: 4%;
+    align-items: top;
+    flex-wrap: wrap;
+}
+img.logo {
+    width: 125px;
+    height: 125px;
+    border-radius: 40px;
+    margin-top: 4%;
+    margin-right: 4%;
+    margin-left: 12%;
+}
+* {
+    box-sizing: border-box;
+}
+h2 {
+    font-size: 25px;
+    margin-top: 8%;
+    margin-left: 2%;
+}
+p.trans {
+    margin-top: 120px;
+    margin-left: 15%;
+}
+
+#but1{
+    margin-top: 10%;
+    margin-left: 2%;
+    border: transparent;
+    background-color: white;
+    border-radius: 1em;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    color: #180EB4;
+    box-shadow: 2px 5px gray;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+ 
+#but {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 135px;
+    height: 135px;
+    margin: 0px 50px 0px 150px;
+    box-shadow: 3px 10px lightgray;
+    cursor: pointer;
+}
+.img1 {
+    width: 80px;
+    height: 80px;
+}
+#p1 {
+    color: #180EB4;
+    font-size: 30px;
+    margin: 5px 50px 0px 172px;
+}
+#p2 {
+    color: #180EB4;
+    font-size: 30px;
+    margin: 5px 50px 0px 100px;
+}
+#p3 {
+    color: #180EB4;
+    font-size: 30px;
+    margin: 5px 50px 0px 150px;
+}
+#but:hover {
+    background-color: #96bdc4; 
+
+}
+#but1:hover {
+    background-color: #96bdc4; 
+}
+
+@media only screen and (max-width: 600px){
+    .container {
+        display: block;
+    }
+    div.menu {
+        display: flex;
+        border:3px solid #288F20;
+        border-radius: 60px;
+        width: 400px;
+        height: 600px;
+        margin: auto;
+        margin-top: 4%;
+        align-items: top;
+        flex-wrap: wrap;
+    }
+    #but {
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 100%;
+        width: 70px;
+        height: 70px;
+        margin: 0px 50px 0px 150px;
+        box-shadow: 3px 10px lightgray;
+        cursor: pointer;
+    }
+    .img1 {
+        width: 55px;
+        height: 55px;
+    }
+    #p1 {
+        color: #180EB4;
+        font-size: 20px;
+        margin: 5px 50px 0px 160px;
+    }
+    #p2 {
+        color: #180EB4;
+        font-size: 20px;
+        margin: 5px 50px 0px 110px;
+    }
+    #p3 {
+        color: #180EB4;
+        font-size: 20px;
+        margin: 5px 50px 0px 140px;
+    }
+    #but1 {
+        margin: 0px 0px 0px 180px;
+    }
+    h2 {
+        font-size: 22px;
+        margin-left: 3%;
+    }
+    img.logo {
+        margin: auto;
+    }
+    p.trans {
+        margin: 0px 50px 0px 10px; 
+    }
+    
+}
