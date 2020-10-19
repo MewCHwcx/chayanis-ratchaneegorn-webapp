@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตารางนัดหมาย-ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&family=Prompt&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <p id="lanChange">TH|EN</p>
+    <div class="user-action">
+        <span style="color: white;">Ratchaneegorn  </span>
+        <button id="logout" style="color: white;">ออกจากระบบ</button>
+    </div>
+    <div id="container">
+        <div class="headText">ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</div> 
+        <div class="text">ตารางนัดหมาย</div> 
+        <div class="card-app-container">
+            <div class="card-show-detail">
+                <div class="detail">
+                    <div><span>สถานที่</span></div>
+                    <div><label>ศูนย์บริการนักศึกษาที่ 2 หลังคอมเพล็กซ์</label></div>
+                    <div><span>วันที่</span></div>
+                    <div><label>13 ตุลาคม 2563</label></div>
+                    <div><span>เวลา</span></div>
+                    <div><label>14.00</label></div>
+                </div>
+                <div class="cancel-button">
+                    <button id="cancel" style="color: white;" onclick="myFunction()">ยกเลิก</button> 
+                </div>  
+                <script>
+                function myFunction() {
+                    alert("กรุณารอรับ E-mail ตอบกลับเพื่อยืนยันการยกเลิกนัด");
+                }
+                </script>
+            </div>
+            <form>
+                <div class="card-button">
+                <button  id="back" style="color: white;" formaction="menu.html">กลับ</button>
+                </div> 
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

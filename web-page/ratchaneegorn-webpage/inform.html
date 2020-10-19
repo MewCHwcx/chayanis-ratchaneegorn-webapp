@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>กรอกข้อมูล-ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</title>
+        <link rel="stylesheet" href="style/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Mitr&family=Prompt&display=swap" rel="stylesheet">
+</head> 
+<body>
+    <p id="lanChange">TH|EN</p>
+    <div class="user-action">
+        <span style="color: white;">Ratchaneegorn  </span>
+        <button id="logout" style="color: white;">ออกจากระบบ</button>
+    </div>
+    <div id="container-inform">
+        <div class="headText">ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</div> 
+        <div class="text">กรอกข้อมูลเบื้องต้น</div> 
+        <div class="main-inform">
+            <div class="information">
+                <div class="check-use">
+                    เคยเข้าใช้บริการหน่วยปฐมภูมินักศึกษา :
+                    <input type="radio" name="check" value="female"> ไม่เคย
+                    <input type="radio" name="check" value="male"> เคย
+                </div>
+                <div class="input-name">
+                    <div>ชื่อ: <input type="text" name="name"></div>
+                    <div>สกุล: <input type="text" name="name"></div>
+                     
+                </div>
+                <div class="gender">
+                    เพศ:
+                    <input type="radio" name="gender" value="female">หญิง
+                    <input type="radio" name="gender" value="male">ชาย
+                    <input type="radio" name="gender" value="other">อื่นๆ
+                </div>
+                <div class="about-sym">
+                    อาการเบื้องต้น: <textarea name="comment" rows="3" cols="20"></textarea>
+                </div>
+                <div class="certificate">
+                    ต้องการใบรับรองแพทย์หรือไม่ :
+                    <input type="radio" name="certify" value="yes"> ใช่
+                    <input type="radio" name="certufy" value="no"> ไม่ใช่
+                </div>
+                <div class="verify">
+                    <div>
+                        <li style="font-size: 18px;">ข้าพเจ้าขอยืนยันว่าข้อมูลที่ระบุเป็นความจริงทุกประการ มิได้แอบอ้างอันเป็นเหตุให้ผู้อื่นได้รับความเสียหาย</li>
+                        <li style="font-size: 18px;">ข้าพเจ้าได้ตรวจสอบข้อมูลอย่างระเอียด รอบคอบ ก่อนที่จะทำการบันทึกเรียบร้อยแล้ว</li>
+                    </div>
+                    <div class="except">
+                        <input type="radio" name="verify" value="except"> ยินยอม
+                       
+                    </div>
+                    <div class="except">
+                        <button id="except-button" style="color: white;">ส่งข้อมูล</button> 
+                    </div>
+                </div>
+            </div>
+            <div class="back-button">
+                <button id="back" style="color: white; float: right;">กลับ</button> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
