@@ -1,0 +1,145 @@
+body {
+    background-color: #CCF2F9;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    border:4px solid #288F20;
+    border-radius: 60px;
+    width: 1150px;
+    height: 600px;
+    margin: auto;
+    margin-top: 4%;
+}
+.container-header {
+    display: flex;
+    flex-direction: row;
+}
+.container-logout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container-menu {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+.logo {
+    margin-top: 5%;
+    margin-left: 16%;
+}
+.img-logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 40px;
+}
+.head-kku {
+    width: 400px;
+    margin-top: 5%;
+    margin-left: 8%;
+}
+h2 {
+    font-size: 35px;
+    font-family: "KodchiangUPC";
+}
+.trans {
+    margin-top: 11%;
+    margin-left: 5%;
+}
+#trans {
+    font-family: "KodchiangUPC";
+    font-size: 30px
+}
+.logout {
+    display: flex;
+    flex-direction: row;
+    margin-left: 60%;
+}
+#img-logout {
+    width: 15px;
+    height: 15px;
+    margin-top: 15%;
+}
+.button-logout {
+    margin-left: 5%;
+}
+#button-logout{
+    display: flex;
+    flex-direction: row;
+    font-family: "KodchiangUPC";
+    font-weight: bold;
+    background-color: white;
+    border-radius: 1em;
+    cursor: pointer;
+    color: #180EB4;
+    font-size: 22px;
+    box-shadow: 2px 3px lightslategray;
+    width: 130px;
+    height: auto;
+    border: transparent;
+}
+a {
+    text-decoration: none;
+}
+.user-kkumail {
+    margin-right: 3%;
+
+}
+.logout-center{
+    display: flex;
+    margin-left: 12%;
+}
+#button-calendar, #button-doctor, #button-list {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 135px;
+    height: 135px;
+    box-shadow: 3px 10px lightgray;
+    cursor: pointer;
+}
+#button-calendar {
+        margin-left: 32%;
+}
+#button-doctor{
+    margin-left: 40%;
+}
+#button-list {
+    margin-left: 32%;
+}
+
+.img-calendar,.img-doctor,.img-list {
+    width: 80px;
+    height: 80px;
+}
+#p-calendar {
+    color: #180EB4;
+    font-size: 30px;
+    margin: 5px 50px 0px 105px;
+}
+#p-doctor {
+    color: #180EB4;
+    font-size: 30px;
+    margin: 5px 50px 0px 100px;
+}
+#p-list {
+    color: #180EB4;
+    font-size: 30px;
+    margin: 5px 50px 0px 95px;
+}
+#button-calendar:hover {
+    background-color: lightblue; 
+}
+#button-doctor:hover {
+    background-color: lightblue; 
+}
+#button-list:hover {
+    background-color: lightblue; 
+}
+#button-logout:hover {
+    background-color:  lightblue; 
+}
