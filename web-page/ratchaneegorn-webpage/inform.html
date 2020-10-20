@@ -23,17 +23,30 @@
                     <input type="radio" name="check" value="female"> ไม่เคย
                     <input type="radio" name="check" value="male"> เคย
                 </div>
+                <div class="id-number">
+                        <label for="id">เลขบัตรประชาชน :</label><br>
+                        <input type="number" id="id" value="">
+                </div>
                 <div class="input-name">
-                    <div>ชื่อ: <input type="text" name="name"></div>
-                    <div>สกุล: <input type="text" name="name"></div>
-                     
+                    
+                    <div>
+                        <label for="fname">ชื่อ : </label><br>
+                        <input type="text" id="fname" value="">
+                    </div>
+                    <div>
+                        <label for="Lname">สกุล : </label><br>
+                        <input type="text" id="lname" value="">
+                    </div>
                 </div>
-                <div class="gender">
-                    เพศ:
-                    <input type="radio" name="gender" value="female">หญิง
-                    <input type="radio" name="gender" value="male">ชาย
-                    <input type="radio" name="gender" value="other">อื่นๆ
-                </div>
+                <div class="emergency">
+                    อาการฉุกเฉิน:
+                    <div><input type="checkbox" name="emer" value="emergency1">หมดสติ ไม่รู้สึกตัว ไม่หายใจ</div>
+                    <div><input type="checkbox" name="emer" value="emergency2">หายใจเร็ว หอบเหนื่อยรุนแรง หายใจติดขัด และมีเสียงดัง</div>
+                    <div><input type="checkbox" name="emer" value="emergency3">ซึมลง เหงื่อแตก ตัวเย็น หรือมีอาการชักร่วมด้วย</div>
+                    <div><input type="checkbox" name="emer" value="emergency4">เจ็บหน้าอกเฉียบพลันและรุนแรง</div>
+                    <div><input type="checkbox" name="emer" value="emergency5"> แขนขาอ่อนแรงครึ่งซีก พูดไม่ชัดแบบปัจจุบันทันด่วน หรือมีอาการชักต่อเนื่องไม่หยุด</div>
+                    <div><input type="checkbox" name="emer" value="emergency6">มีอาการอื่นร่วมด้วย ซึ่งเป็นอาการที่มีผลต่อการหายใจ ระบบการไหลเวียนโลหิต และระบบสมองอย่างรุนแรงที่อาจเป็นอันตรายต่อชีวิต</div>
+                    <div><input type="radio" name="emer-no" value="">ไม่มีอาการ</div></div> 
                 <div class="about-sym">
                     อาการเบื้องต้น: <textarea name="comment" rows="3" cols="20"></textarea>
                 </div>
@@ -52,13 +65,13 @@
                        
                     </div>
                     <div class="except">
-                        <button id="except-button" style="color: white;">ส่งข้อมูล</button> 
+                        <a id="except-button" class="hover-button" style="color: white;" href="appoint.html">ส่งข้อมูล</a> 
                     </div>
                 </div>
             </div>
-            <div class="back-button">
-                <button id="back" style="color: white; float: right;">กลับ</button> 
-            </div>
+        </div>
+        <div class="back-button">
+            <a id="back" class="hover-button" style="color: white; float: right;" href="calendar.html">กลับ</a>
         </div>
     </div>
 </body>

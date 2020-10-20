@@ -22,7 +22,11 @@
 body {
     background-color: #ffdd94;
     background-image: linear-gradient(to bottom right, #fad874,#ffa0bed5);
+    /* background-image: url("../image/bgtest.png");
+    background-size: contain;
+    background-repeat: no-repeat; */
     min-height: 100vh;
+    height: auto;
 }
 #container {
     font-family: 'Prompt', sans-serif;
@@ -30,6 +34,7 @@ body {
     margin: 0vh 20vh 0vh 20vh;
     padding: 20px;
 }
+
 .text{
     font-family: 'Mitr', sans-serif;
     color: #4e692e;
@@ -118,7 +123,7 @@ body {
     outline: none;
     cursor: pointer;
 }
-#back, #cancel, #except {
+#back, #cancel, #except, #next {
     text-align: center;
     font-size: 25px;
     letter-spacing: 1px;
@@ -129,11 +134,15 @@ body {
     padding: 10px 30px;
     display: inline-block;
     outline: none;
+    text-decoration: none;
     cursor: pointer;
 }
 .user-action {
     display: inline;
     float: right;
+}
+.back-button {
+    padding: 10px;
 }
 #cancel {
     width: fit-content;
@@ -191,11 +200,11 @@ body {
 }
 .main-inform {
     width: auto;
-    height: 70vh;
-    margin:40px;
+    height: 100vh;
+    margin: 0px 20px;
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 20px;
     font-size: 20px;
     background-color: #a1ecd7 ;
     border-radius: 50px; 
@@ -203,39 +212,48 @@ body {
 .check-use {
     display: flex;
     flex-direction: row;
-    padding:  0px 0px 0.5cm 0px;
+    padding:  0px 0px 10pxm 0px;
 }
 .information {
     padding: 0px 30px 30px 100px;
 }
-.input-name {
+.information label {
+    padding:  0px 0px 10pxm 0px;
+}
+#id, #fname, #lname {
+    width: 200px;
+}
+.input-name, .id-number{
     display: flex;
     flex-direction: row;
-    width: 70%;
+    padding: 5px;
 }
 .input-name div {
-    padding: 0px  0.5cm 0px  0px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
 }
 input {
     border-radius: 20px;
     border: 5px solid white;
 }
-.gender {
-    display: flex;
+.emergency {
+    /* display: flex; */
     flex-direction: row;
-    padding: 0.5cm 0px 0.5cm 0px ;
+    padding: 10px 0px 10px 0px ;
 }
 textarea {
     width: 400px;
     height: 100px;
     resize: none;
     border-radius: 25px;
+    padding: 10px ;
 }
 .certificate {
-    padding: 0.5cm 0px 0.5cm 0px ;
+    padding: 10px 0px 10px 0px ;
 }
 .verify, .verify div {
-    padding: 0cm 0px 0.5cm 0px ;
+    padding: 0px 0px 10px 0px ;
 }
 .except {
     text-align: center;
@@ -247,10 +265,38 @@ textarea {
         box-shadow: 2px 2px 4px rgba(0,0,200,0.4);
         border-radius: 20px;
         padding: 5px 25px;
+        text-decoration: none;
         cursor: pointer;
 }
 #container-calendar {
-    background-color: white;
-    padding: 180px;
+    /* background-color: white; */
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
 }
+.this-calendar {
+    width: auto;
+    height: 400px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    border: 2px solid #fcca0486;
+    padding:0px 20px 10px 20px;
+}
+.next-button {
+    text-align: right;
+    padding: 10px;
+}
+.hover-button:hover {
+    background-color: rgb(255, 246, 122) !important;
+    transition: 0.5s;
+}
+#next {
+    font-size: 18px;
+    border: 2px solid rgb(244, 255, 93);
+    background: #1bff1be0;
+    box-shadow: 2px 2px 4px rgba(0,0,200,0.4);
+    border-radius: 20px;
+    cursor: pointer;
+    /* text-align: right; */
+} 
 
