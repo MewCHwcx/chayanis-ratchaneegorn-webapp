@@ -1,3 +1,4 @@
+@media only screen and (min-width: 768px) {
 body {
     background-color: #CCF2F9;
 }
@@ -92,51 +93,5 @@ h2 {
 .menu-choice {
     margin-left: 10%;
 }
-
-@media screen and (max-width: 600px) {
-    .container {
-        width: 450px;
-        height: 650px;
-    }
-    .container-header {
-        display: block;
-        position: relative;
-    }
-    .container2 {
-        display: block;
-    }
-    .logo-center {
-        width: 100px;
-        height: 100px;
-        margin: auto;
-        margin-top: 2%;
-    }
-    .logo img {
-        width: 60px;
-        height: 60px;
-    }
-    .trans {
-        display: none;
-    }
-    h2 {
-        display: none;
-     }
-    .txt-doctor {
-        display: block;
-        margin-left: 40%;
-        font-size: 30px;
-    }
-    .locate {
-        margin-left: 10%;
-    }
-   .month {
-       margin-top: 2%;
-    margin-left: 10%;
-    
-} #month, #location { 
-    padding: 1%;
 }
-#button-back {
-    display: none;
-}}
   

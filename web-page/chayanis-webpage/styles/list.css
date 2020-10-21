@@ -1,3 +1,4 @@
+@media only screen and (min-width: 768px) {
 body {
     background-color: #CCF2F9;
 }
@@ -149,4 +150,5 @@ table tbody tr.selected {
 #write {
     width: 30%;
     text-align: left;
+}
 }

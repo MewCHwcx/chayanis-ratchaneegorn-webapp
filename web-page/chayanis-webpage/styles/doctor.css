@@ -1,4 +1,4 @@
-
+@media only screen and (min-width: 768px) {
 body {
     background-color: #CCF2F9;
 }
@@ -148,4 +148,5 @@ input {
 #save button {
     color: #0C59F3;
     margin-left: 1%;
+}
 }
