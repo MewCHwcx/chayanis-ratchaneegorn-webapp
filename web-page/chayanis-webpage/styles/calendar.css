@@ -1,3 +1,4 @@
+@media screen and (max-width: 1600px) {
 body {
     background-color: #CCF2F9;
 }
@@ -91,6 +92,7 @@ h2 {
 }
 .menu-choice {
     margin-left: 10%;
+}
 }
 @media screen and (max-width: 600px) {
     .container {

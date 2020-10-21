@@ -1,3 +1,4 @@
+@media screen and (max-width: 1600px) {
 body {
     background-color: #CCF2F9;
 }
@@ -142,4 +143,5 @@ a {
 }
 #button-logout:hover {
     background-color:  lightblue; 
+}
 }
