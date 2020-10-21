@@ -1,5 +1,4 @@
 
-@media screen and (max-width: 1600px) {
 * {
     box-sizing: border-box;
 }
@@ -77,5 +76,4 @@ h2 {
 .button:hover {
     background-color:lightgreen;
 
-}
 }
