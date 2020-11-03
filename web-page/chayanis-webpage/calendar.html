@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123</title>
+    <link rel="stylesheet" href="styles/calendar.css">
+   
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-header">
+        <div class="logo-center">
+            <div class="logo">
+                <a href="menuPage.html"><img src="images/calendar.png"> </a>
+            </div>
+        </div>
+        <div class="head-kku">
+            <div>
+                <h2>ระบบนัดหมายหน่วยปฐมภูมินักศึกษา 123 มหาวิทยาลัยขอนแก่น</h2>
+                <h2 class="txt-doctor">ปฏิทิน</h2>
+            </div>
+        </div>
+        <div class="trans">
+            <p id="trans"> TH</a> | <a href="#">EN</a></p>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="locate"><select name="location" id="location">
+                <option value="complex">ศูนย์บริการนักศึกษาที่ 1 (หลังคอมเพล็ก) </option>
+                <option value="dorm8">ศูนย์บริการนักศึกษาที่ 2 (หอแปดหลัง)</option>
+            </select></div>
+        <div class="month">
+            <select name="month" id="month" onchange="getMonth()">
+                <option value="1">มกราคม</option>
+                <option value="2">กุมภาพันธ์</option>
+                <option value="3">มีนาคม</option>
+                <option value="4">เมษายน</option>
+                <option value="5">พฤษภาคม</option>
+                <option value="6">มิถุนายน</option>
+                <option value="7">กรกฎาคม</option>
+                <option value="8">สิงหาคม</option>
+                <option value="9">กันยายน</option>
+                <option value="10" selected="selected">ตุลาคม</option>
+                <option value="11">พฤศจิกายน</option>
+                <option value="12">ธันวาคม</option>
+            </select>
+          
+        </div>
+        <div class="back">
+            <a href="menuPage.html"><button id="button-back">ย้อนกลับ</button></a>
+        </div>
+    </div>
+            <div id='calendar'>
+            </div>
+
+</body>
+
+</html>

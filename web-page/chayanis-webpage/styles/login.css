@@ -1,0 +1,80 @@
+@media only screen and (min-width: 768px) {
+* {
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    border:4px solid #288F20;
+    border-radius: 60px;
+    width: 1150px;
+    height: 600px;
+    margin: auto;
+    margin-top: 4%;
+}
+.container-header {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    height: 140px;
+    margin-left: 43%;
+    
+}
+.logo {
+    margin-top: 5%;
+    margin-left: 16%;
+}
+.img-logo {
+    width: 120px;
+    height: 120px;
+}
+.head-kku {
+    width: 400px;
+    margin-left: -70%;
+}
+h2 {
+    font-size: 35px;
+    font-family: "KodchiangUPC";
+}
+.container-login {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 35%;
+}
+#kkumail ,#password {
+    height: 45px;
+    width: 350px;
+    border-radius: 3em;
+    color: black;
+    border: solid 2px lightslategray;
+    font-size: 22px;
+    text-align: center;
+}
+#password {
+    margin-top: 6%;
+}
+.form-users {
+    display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.button {
+    width: 25%;
+    border-radius: 1em;
+    font-family: "KodchiangUPC";
+    font-size: 23px;
+    color: #288F20;
+    font-weight: bold;
+    justify-content: center;
+    background-color: white;
+    cursor: pointer;
+    height: 40%;
+    margin-top: 6%;
+    margin-left: 38%;
+}
+.button:hover {
+    background-color:lightgreen;
+
+}
+}
