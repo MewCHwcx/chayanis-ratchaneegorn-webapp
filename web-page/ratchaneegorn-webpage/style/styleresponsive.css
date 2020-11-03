@@ -1,0 +1,51 @@
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 10px; 
+    }
+    .headText {
+        font-size: 18px;
+    }
+    #container {
+        font-size: 16px;
+        
+    }
+    .card-container {
+        border: 5px solid white;
+        align-items: center;
+        display: flex; 
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+    }
+    .user-action {
+        font-size: 16px;
+    }
+    .detail {
+        font-size: 16px;
+        flex-direction: column;
+        width: fit-content;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .detail div {
+        display: flex;
+        flex-direction: column;
+    }
+    .detail label {
+        font-size: 16px;
+        width: fit-content;
+    }
+
+    .card-app-container {
+        border: 2px solid white;
+        margin: 0px 30px 30px 30px;
+    }
+    .card-show-detail {
+        align-items: center;
+        
+    }
+    #back, #cancel, #except, #next {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
