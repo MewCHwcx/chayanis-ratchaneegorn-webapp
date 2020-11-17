@@ -163,6 +163,17 @@ body {
     box-shadow: 4px 4px 4px #012c0167;
     background-color:#73ccd5;
 }
+.link-map {
+    font-size: 16px;
+    flex-direction: row;
+}
+#link-btn {
+    border-radius: 10px;
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer; 
+}
 .detail div {
     margin: 20px;
 }
@@ -178,12 +189,11 @@ body {
 #container-inform {
     font-family: 'Prompt', sans-serif;
     border-radius: 20px;
-    margin: 0px 20vh 0vh 20vh;
+    margin: 0px 80px 80px 80px;
     padding: 20px;
 }
 .main-inform {
     width: auto;
-    /* height: 100vh; */
     margin: 0px 0px 20px 0px;
     display: flex;
     flex-direction: column;

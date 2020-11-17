@@ -22,14 +22,17 @@
     }
     .detail {
         font-size: 16px;
+        margin: 8px 20px 0px 20px;
         flex-direction: column;
         width: fit-content;
         background-color: transparent;
         box-shadow: none;
+        margin: 10px;
     }
     .detail div {
         display: flex;
         flex-direction: column;
+        margin: 0px;
     }
     .detail label {
         font-size: 16px;
@@ -39,13 +42,43 @@
     .card-app-container {
         border: 2px solid white;
         margin: 0px 30px 30px 30px;
+        background-image: none;
+        box-shadow: none;
     }
-    .card-show-detail {
+    .card-show-detail label{
         align-items: center;
-        
+        margin: 25px;
+        padding: 15px; 
     }
     #back, #cancel, #except, #next {
         font-size: 14px;
         padding: 10px 15px;
+    }
+    .link-map {
+        font-size: 16px;
+        flex-direction: row;
+        margin: auto;
+    }
+    #link-btn {
+        width: fit-content;
+    }
+    /* The style for inform page */
+    .main-inform {
+        font-size: 10px;
+        padding: 0px;
+        background-color: none;
+    }
+    #container-inform {
+        font-size: 10px;
+        border: none;
+        margin: auto;
+        padding: 0px;
+    }
+
+    .information {
+        font-size: 10px;
+        margin: auto;
+        padding: 2px;
+
     }
 }

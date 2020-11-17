@@ -21,18 +21,25 @@
             <div class="card-show-detail">
                 <div class="detail">
                     <div><span>สถานที่</span></div>
-                    <div><label>ศูนย์บริการนักศึกษาที่ 2 หลังคอมเพล็กซ์</label></div>
+                    <div class="link-map">
+                        <label>ศูนย์บริการนักศึกษาที่ 2 หลังคอมเพล็กซ์ </label>
+                        <button id="link-btn" onclick="goMap()"> เพิ่มเติม</button>
+                    </div>
                     <div><span>วันที่</span></div>
                     <div><label>13 ตุลาคม 2563</label></div>
                     <div><span>เวลา</span></div>
                     <div><label>14.00</label></div>
                 </div>
                 <div class="cancel-button">
-                    <button id="cancel" style="color: white;" onclick="myFunction()">ยกเลิก</button> 
+                    <button id="cancel" style="color: white;" onclick="sendEmail()">ยกเลิก</button> 
                 </div>  
                 <script>
-                function myFunction() {
+                function sendEmail() {
                     alert("กรุณารอรับ Email ตอบกลับเพื่อยืนยันการยกเลิกนัด");
+                }
+                function goMap() {
+                    // link to map
+                    alert("test");
                 }
                 </script>
             </div>

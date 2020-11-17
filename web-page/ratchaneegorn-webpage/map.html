@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แผนที่สถานทำการ-ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/styleresponsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&family=Prompt&display=swap" rel="stylesheet">
+    <style>
+        #map {
+            height: 100%;
+            width: 100%;
+            margin: 20px;
+            padding: 30px;
+        }
+        #container-map {
+            height: 400px;
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+        }
+        #location:last-child {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container-map">
+        <div id="map"></div>
+        <div id="location">
+            <p>เลือกสถานที่</p>
+        </div>
+    </div>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 13.7442, lng: 100.4608},
+                zoom: 8
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXDkAW3HYyb_9huOH8R-1StLky9IdKVrc&callback=initMap"
+    async defer></script>
+</body>
+</html>
