@@ -40,7 +40,7 @@
     }
 
     .card-app-container {
-        border: 2px solid white;
+        border: 0.5px solid white;
         margin: 0px 30px 30px 30px;
         background-image: none;
         box-shadow: none;
@@ -61,6 +61,8 @@
     }
     #link-btn {
         width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
     /* The style for inform page */
     .main-inform {
@@ -77,9 +79,9 @@
 
     .information {
         font-size: 10px;
-        margin: auto;
-        padding: 2px;
-
+        margin:auto;
+        padding: 10px;
+        border-radius: none;
     }
     #map {
         height: 400px;
@@ -94,4 +96,5 @@
         display: flex;
         flex-direction: column;
     }
+    
 }
