@@ -11,8 +11,8 @@
 <body>
     <p id="lanChange">TH|EN</p>
     <div class="user-action">
-        <span style="color: white;">Ratchaneegorn  </span>
-        <button id="logout" style="color: white;">ออกจากระบบ</button>
+        <button id="login">Sign in</button>
+        <button id="logout">Sign Out</button>
     </div>
     <div id="container-inform">
         <div class="headText">ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</div> 
@@ -42,14 +42,10 @@
                 <div class="emergency">
                     อาการฉุกเฉิน:
                     <div><input type="checkbox" class="there-is-ill" name="emer1" value="emergency1">หมดสติ ไม่รู้สึกตัว ไม่หายใจ</div>
-                    <div><input type="checkbox" class="there-is-ill" name="emer2" value="emergency2">หายใจเร็ว หอบเหนื่อยรุนแรง หายใจติดขัด และมีเสียงดัง</div>
-                    <div><input type="checkbox" class="there-is-ill" name="emer3" value="emergency3">ซึมลง เหงื่อแตก ตัวเย็น หรือมีอาการชักร่วมด้วย</div>
-                    <div><input type="checkbox" class="there-is-ill" name="emer4" value="emergency4">เจ็บหน้าอกเฉียบพลันและรุนแรง</div>
-                    <div><input type="checkbox" class="there-is-ill" name="emer5" value="emergency5"> แขนขาอ่อนแรงครึ่งซีก พูดไม่ชัดแบบปัจจุบันทันด่วน หรือมีอาการชักต่อเนื่องไม่หยุด</div>
-                    <div><input type="checkbox" class="there-is-ill" name="emer6" value="emergency6">มีอาการอื่นร่วมด้วย ซึ่งเป็นอาการที่มีผลต่อการหายใจ ระบบการไหลเวียนโลหิต และระบบสมองอย่างรุนแรงที่อาจเป็นอันตรายต่อชีวิต</div>
+                    <div><input type="checkbox" class="there-is-ill" name="emer2" value="emergency2">แขนขาอ่อนแรง</div>
                     <div><input type="radio" name="emer-no" id="there-is-no-ill" value="">ไม่มีอาการ</div></div> 
                 <div class="about-sym">
-                    อาการเบื้องต้น: <textarea name="comment" rows="3" cols="20"></textarea>
+                    อาการเบื้องต้น: <textarea id="myTextarea" name="comment" rows="3" cols="20">test</textarea>
                 </div>
                 <div class="certificate">
                     ต้องการใบรับรองแพทย์หรือไม่ :
@@ -79,7 +75,10 @@
         
         function sendInfor() {
             var personid = document.getElementById('ssn').value;
-            console.log(personid);
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var about = document.getElementsById('myTextarea').value;
+            console.log("id: "+personid +" name: "+fname +" "+ lname );
         }
 
         const ills = document.getElementsByClassName('there-is-ill')

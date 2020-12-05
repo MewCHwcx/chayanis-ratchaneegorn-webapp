@@ -11,8 +11,8 @@
 <body>
     <p id="lanChange">TH|EN</p>
     <div class="user-action">
-        <span style="color: white;">Ratchaneegorn  </span>
-        <button id="logout" style="color: white;">ออกจากระบบ</button>
+        <button id="login">Sign in</button>
+        <button id="logout">Sign Out</button>
     </div>
     <div id="container-appoint">
         <div class="headText">ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</div> 
@@ -23,7 +23,7 @@
                     <div><span>สถานที่</span></div>
                     <div class="link-map">
                         <label>ศูนย์บริการนักศึกษาที่ 2 หลังคอมเพล็กซ์ </label>
-                        <button id="link-btn" onclick="goMap()"> เพิ่มเติม</button>
+                        <button id="link-btn" href="map.html"> เพิ่มเติม</button>
                     </div>
                     <div><span>วันที่</span></div>
                     <div><label>13 ตุลาคม 2563</label></div>
@@ -36,10 +36,6 @@
                 <script>
                 function sendEmail() {
                     alert("กรุณารอรับ Email ตอบกลับเพื่อยืนยันการยกเลิกนัด");
-                }
-                function goMap() {
-                    // link to map
-                    alert("test");
                 }
                 </script>
             </div>
