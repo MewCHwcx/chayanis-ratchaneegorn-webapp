@@ -1,8 +1,6 @@
 const fs = require('fs');
 const readline = require('readline');
 const { google } = require('googleapis');
-const { resolve } = require('path');
-const { rejects } = require('assert');
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/calendar'];
@@ -10,7 +8,6 @@ const SCOPES = ['https://www.googleapis.com/auth/calendar'];
 // created automatically when the authorization flow completes for the first
 // time.
 const TOKEN_PATH = 'token.json';
-
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -148,10 +145,41 @@ app.get("/", (req, res) => {
 app.post("/addevent", (req, res) => {
     const newEvent = {
         summary: "นัดหมายที่ 1",
-        description: `${req.body.symptomps} `
+        location: `${req.body.place}`,
+        description: `
+            เลขประจำตัวประชาชน: ${req.body.ssn}
+            ชื่อ: ${req.body.first_name}
+            สกุล: ${req.body.last_name}
+            อาการ: ${req.body.symptomps}
+            ต้องการใบรับรองแพทย์: ${req.body.certify === "yes" ? "ใช่" : "ไม่"}
+        `,
+        start: {
+            dateTime: `${req.body.date}T${req.body.time.split("-")[0]}+07:00`,
+            timeZone: "Asia/Bangkok"
+          },
+        end: {
+            dateTime: `${req.body.date}T${req.body.time.split("-")[1]}+07:00`,
+            timeZone: "Asia/Bangkok"
+        },
+        attendees: [
+          {email: "s.ratchaneegron@kkumail.com"},
+          {email: "wbm.chayanis@gmail.com"}
+        ],
+        reminders: {
+          useDefault: false
+        }   
     }
-    console.log(req.body)
-    res.send("Data sent to backend")
+    // const name = req.body.name
+    // authorize()
+    // .then(oAuth2Client => {
+    //     addEvent(oAuth2Client, )
+    // })
+    authorize()
+    .then(oAuth2Client => {
+        addEvent(oAuth2Client, newEvent)
+    })
+    res.redirect("/")
+    
 })
 
 app.listen(5500);
