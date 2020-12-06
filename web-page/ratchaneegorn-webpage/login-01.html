@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
         <meta name="google-signin-client_id" content="331764559247-vo0g3vm26qlkcu3dim0vljmp08990tgk.apps.googleusercontent.com">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     // Render Google Sign-in button
     function renderButton() {
@@ -30,8 +30,8 @@ function onSuccess(googleUser) {
         });
         request.execute(function (resp) {
             // Display the user details
-            var profileHTML = '<h3>Welcome '+resp.given_name+'! <a href="javascript:void(0);" onclick="signOut();">Sign out</a></h3>';
-            profileHTML += '<img src="'+resp.picture+'"/><p><b>Google ID: </b>'+resp.id+'</p><p><b>Name: </b>'+resp.name+'</p><p><b>Email: </b>'+resp.email+'</p>';
+            var profileHTML = '<a href="login-01.html" onclick="signOut();"<p style="margin-left:50px;">Sign out</a></p><br>';
+            profileHTML += '<b>Name: </b>'+resp.name+'</p><p><b>Email: </b>'+resp.email+'</p>';
             document.getElementsByClassName("userContent")[0].innerHTML = profileHTML;
             
             document.getElementById("gSignIn").style.display = "none";
@@ -53,22 +53,12 @@ function signOut() {
         document.getElementsByClassName("userContent")[0].style.display = "none";
         document.getElementById("gSignIn").style.display = "block";
     });
-    
+    console.log("logout");
     auth2.disconnect();
 }
 </script>
 <style>
-    .container{padding: 20px;}
-    .userContent{
-        padding: 10px 20px;
-        margin: auto;
-        width: 250px;
-        background-color: #f7f7f7;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
-        0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    }
-    .userContent h3{font-size: 17px;}
-    .userContent p{font-size: 15px;}
+    .userContent p{font-size: 10px;}
 </style>
 </head>
 <div class="container">
