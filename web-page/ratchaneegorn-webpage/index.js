@@ -142,6 +142,7 @@ app.use(express.urlencoded({extended: false}))
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/inform.html")
 })
+
 app.post("/addevent", (req, res) => {
     const newEvent = {
         summary: "นัดหมายที่ 1",
