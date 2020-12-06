@@ -113,34 +113,37 @@ function addEvent(auth, event) {
         calendarId: 'primary',
         resource: event
     }, (err, res) => {
-        console.log(err)
+        console.log(res)
     })
 }
 
-
-// const http = require('http')
-// const port = 5500
-// const server = http.createServer((req, res) => {
-//     res.statusCode = 200
-//     // add to GET
-//     authorize()
-//     .then(oAuth2Client => {
-//         listEvents(oAuth2Client)
-//         .then(data => {
-//             res.end(JSON.stringify(data))
-//         })
-//     }) 
-// })
 var express = require('express');
 var app = express();
-var things = require('./things.js')
 
-app.use('/things', things);
 app.use(express.static(__dirname + '/style'));
+app.use(express.static(__dirname + '/script'));
+
 app.use(express.urlencoded({extended: false}))
 
+app.use("/",express.static(__dirname+"/"))
+
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/inform.html")
+    res.sendFile(__dirname + "/menu.html")
+})
+// app.get("/", (req, res) => {
+//     res.sendFile(__dirname + "/inform.html")
+// })
+
+app.get("/appointments", (req,res) => {
+    res.sendFile(__dirname + "/list.html")
+})
+
+app.get("/getAppointments", (req,res) => {
+    authorize()
+    .then(oAuth2Client => {
+        listEvents(oAuth2Client)
+        .then(data => res.json(data))
+    })
 })
 
 app.post("/addevent", (req, res) => {
@@ -170,11 +173,7 @@ app.post("/addevent", (req, res) => {
           useDefault: false
         }   
     }
-    // const name = req.body.name
-    // authorize()
-    // .then(oAuth2Client => {
-    //     addEvent(oAuth2Client, )
-    // })
+    
     authorize()
     .then(oAuth2Client => {
         addEvent(oAuth2Client, newEvent)

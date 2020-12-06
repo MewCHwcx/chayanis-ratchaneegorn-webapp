@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123</title>
+    <link rel="stylesheet" href="list.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-header">
+            <div class="logo-center">
+                <div class="logo">
+                    <img src="images/list.png">
+                </div>
+            </div>
+            <div class="head-kku">
+                <div>
+                    <h2>ระบบนัดหมายหน่วยปฐมภูมินักศึกษา 123 มหาวิทยาลัยขอนแก่น</h2>
+                    <h2 class="txt-doctor">ตารางนัดผู้ป่วย</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container2">
+            <div><select name="location" id="location">
+                    <option value="complex">ศูนย์บริการนักศึกษาที่ 1 (หลังคอมเพล็ก) </option>
+                    <option value="dorm8">ศูนย์บริการนักศึกษาที่ 2 (หอแปดหลัง)</option>
+                </select></div>
+            <div class="button">
+                <button class="add-button">เพิ่ม</button>
+                <button class="del-button">ยกเลิก</button>
+            </div>
+            </div>
+            
+        <div class="container3">
+            <div class="info">
+                <table>
+                    <tr>
+                        <th>นัดหมายที่</th>
+                        <th>วันที่</th>
+                        <th>เวลา</th>
+                        <th>ชื่อ</th>
+                        <th>สกุล</th>
+                        <th>อาการ</th>
+                        <th>ขอใบรับรองแพทย์</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch("http://localhost:5500/getAppointments")
+        .then(res => res.json())
+        .then(appointments => {
+            appointments.forEach((appointment, index) => {
+                const tr = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${appointment.start.dateTime.split("T")[0]}</td>
+                        <td>${appointment.start.dateTime.split("T")[1].split("+")[0]}</td>
+                        <td>${appointment.description.split("\n")[2].split(":")[1]}</td>
+                        <td>${appointment.description.split("\n")[3].split(":")[1]}</td>
+                        <td>${appointment.description.split("\n")[4].split(":")[1]}</td>
+                        <td>${appointment.description.split("\n")[5].split(":")[1]}</td>
+                    </tr>
+                `
+                document.querySelector("table").innerHTML += tr
+            })
+        })
+    </script>
+</body>
+
+</html>
