@@ -72,26 +72,20 @@ function getAccessToken(oAuth2Client, callback) {
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
 function listEvents(auth) {
-    const calendar = google.calendar({ version: 'v3', auth });
-    calendar.events.list({
-        calendarId: 'primary',
-        timeMin: (new Date()).toISOString(),
-        maxResults: 30,
-        singleEvents: true,
-        orderBy: 'startTime',
-    }, (err, res) => {
-        if (err) return console.log('The API returned an error: ' + err);
-        const events = res.data.items;
-        if (events.length) {
-            console.log('Upcoming 10 events:');
-            events.map((event, i) => {
-                const start = event.start.dateTime || event.start.date;
-                console.log(`${start} - ${event.summary}`);
-            });
-        } else {
-            console.log('No upcoming events found.');
-        }
-    });
+    return new Promise((resolve, reject) => {
+        const calendar = google.calendar({ version: 'v3', auth });
+        calendar.events.list({
+            calendarId: 'primary',
+            timeMin: (new Date()).toISOString(),
+            maxResults: 30,
+            singleEvents: true,
+            orderBy: 'startTime',
+        }, (err, res) => {
+            if (err) return console.log('The API returned an error: ' + err);
+            const events = res.data.items;
+            resolve(events)
+        });
+    })
 }
 
 var event = {
@@ -126,16 +120,35 @@ function addEvent(auth, event) {
     })
 }
 
-authorize()
-.then(oAuth2Client => {
-    addEvent(oAuth2Client, event)
-    listEvents(oAuth2Client)
+
+// const http = require('http')
+// const port = 5500
+// const server = http.createServer((req, res) => {
+//     res.statusCode = 200
+//     // add to GET
+//     authorize()
+//     .then(oAuth2Client => {
+//         listEvents(oAuth2Client)
+//         .then(data => {
+//             res.end(JSON.stringify(data))
+//         })
+//     }) 
+// })
+var express = require('express');
+var app = express();
+var things = require('./things.js')
+
+app.use('/things', things);
+app.use(express.static(__dirname + '/style'));
+app.use(express.urlencoded({extended: false}))
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/inform.html")
+})
+app.post("/addevent", (req, res) => {
+    
+    console.log(req.body)
+    res.send("Data sent to backend")
 })
 
-app.post("/addevent", (req, res) => {
-    const name = req.body.name
-    authorize()
-    .then(oAuth2Client => {
-        addEvent(oAuth2Client, )
-    })
-})
+app.listen(5500);

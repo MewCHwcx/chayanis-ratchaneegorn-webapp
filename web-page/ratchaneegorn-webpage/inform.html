@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>กรอกข้อมูล-ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/styleresponsive.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styleresponsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Mitr&family=Prompt&display=swap" rel="stylesheet">
 </head>
 
@@ -52,17 +52,17 @@
                 </div>
                 <div class="id-number">
                     <label>เลขบัตรประชาชน :</label><br>
-                    <input type="number" id="ssn" value="">
+                    <input type="number" name="ssn" id="ssn" value="">
                 </div>
                 <div class="input-name">
 
                     <div>
                         <label for="fname">ชื่อ : </label><br>
-                        <input type="text" id="fname" value="">
+                        <input type="text" id="fname" name="first_name" value="">
                     </div>
                     <div>
                         <label for="Lname">สกุล : </label><br>
-                        <input type="text" id="lname" value="">
+                        <input type="text" id="lname" name="last_name" value="">
                     </div>
                 </div>
                 <!-- <div class="emergency">
@@ -71,8 +71,8 @@
                     <div><input type="checkbox" class="there-is-ill" name="emer2" value="emergency2">แขนขาอ่อนแรง</div>
                     <div><input type="radio" name="emer-no" id="there-is-no-ill" value="">ไม่มีอาการ</div></div>  -->
                 <div class="about-sym">
-                    อาการเบื้องต้น: <textarea input style="width: 400px; height: 100px;" type="text" id="textarea"
-                        value=""></textarea>
+                    อาการเบื้องต้น: <input style="width: 400px; height: 100px;" type="text" id="textarea"
+                        value="" name="symptomps"></input>
                 </div>
                 <div class="certificate">
                     ต้องการใบรับรองแพทย์หรือไม่ :
@@ -87,8 +87,7 @@
                             ก่อนที่จะทำการบันทึกเรียบร้อยแล้ว</p>
                     </div>
                     <div class="except">
-                        <a id="except-button" class="hover-button" style="color: white;"
-                            onclick="sendInfor()">ส่งข้อมูล</a>
+                        <input type="submit" id="except-button" class="hover-button" style="color: white;">ส่งข้อมูล</input>
                     </div>
                 </div>
             </div>
@@ -110,6 +109,8 @@
             var place = document.getElementById('place').value;
             // console.log(displayRadioValue() + " วันที่: " + date + " เวลา: " + selectTime + " สถานที่: " + place + " id: " + personid + " name: " + fname + "  " + lname + " อาการ: " + textarea
             //     + displayCertify());
+            let table = document.createElement("table")
+            document.body.appendChild(table);
         }
         function displayRadioValue() {
             var register = document.getElementsByName('check');
