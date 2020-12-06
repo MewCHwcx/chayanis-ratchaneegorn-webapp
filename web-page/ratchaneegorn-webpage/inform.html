@@ -21,9 +21,23 @@
             <div class="information">
                 <div class="check-use">
                     เคยเข้าใช้บริการหน่วยปฐมภูมินักศึกษา :
-                    <input type="radio" name="check" value="female"> ไม่เคย
-                    <input type="radio" name="check" value="male"> เคย
+                    <input id="register" type="radio" name="check" value="no-register"> ไม่เคย
+                    <input id="register" type="radio" name="check" value="register"> เคย
                 </div>
+                <div>เวลานัดหมาย
+                    <select style="width: 300px; border: 3px solid white; height: 30px; border-radius: 20px;" id="mySelect">
+                        <option value="09.00-10.00">09.00-10.00</option>
+                        <option value="10.00-11.00">10.00-11.00</option>
+                        <option value="11.00-12.00">11.00-12.00</option>
+                        <option value="13.00-14.00">13.00-14.00</option>
+                        <option value="14.00-15.00">14.00-15.00</option>
+                        <option value="15.00-16.00">15.00-16.00</option>
+                        <option value="16.00-17.00">16.00-17.00</option>
+                        <option value="17.00-18.00">17.00-18.00</option>
+                        <option value="18.00-19.30">18.00-19.30</option>
+                    </select>
+                </div>
+               
                 <div class="id-number">
                         <label>เลขบัตรประชาชน :</label><br>
                         <input type="number" id="ssn" value="">
@@ -39,27 +53,23 @@
                         <input type="text" id="lname" value="">
                     </div>
                 </div>
-                <div class="emergency">
+                <!-- <div class="emergency">
                     อาการฉุกเฉิน:
                     <div><input type="checkbox" class="there-is-ill" name="emer1" value="emergency1">หมดสติ ไม่รู้สึกตัว ไม่หายใจ</div>
                     <div><input type="checkbox" class="there-is-ill" name="emer2" value="emergency2">แขนขาอ่อนแรง</div>
-                    <div><input type="radio" name="emer-no" id="there-is-no-ill" value="">ไม่มีอาการ</div></div> 
+                    <div><input type="radio" name="emer-no" id="there-is-no-ill" value="">ไม่มีอาการ</div></div>  -->
                 <div class="about-sym">
-                    อาการเบื้องต้น: <textarea id="myTextarea" name="comment" rows="3" cols="20">test</textarea>
+                    อาการเบื้องต้น: <textarea input style="width: 400px; height: 100px;" type="text" id="textarea" value=""> </textarea>
                 </div>
                 <div class="certificate">
                     ต้องการใบรับรองแพทย์หรือไม่ :
-                    <input type="radio" name="certify" value="yes"> ใช่
-                    <input type="radio" name="certufy" value="no"> ไม่ใช่
+                    <input id="certify" type="radio" name="certify" value="yes"> ใช่
+                    <input id="certify" type="radio" name="certify" value="no-certify"> ไม่ใช่
                 </div>
                 <div class="verify">
                     <div>
-                        <li style="font-size: 18px;">ข้าพเจ้าขอยืนยันว่าข้อมูลที่ระบุเป็นความจริงทุกประการ มิได้แอบอ้างอันเป็นเหตุให้ผู้อื่นได้รับความเสียหาย</li>
-                        <li style="font-size: 18px;">ข้าพเจ้าได้ตรวจสอบข้อมูลอย่างระเอียด รอบคอบ ก่อนที่จะทำการบันทึกเรียบร้อยแล้ว</li>
-                    </div>
-                    <div class="except">
-                        <input type="radio" name="verify" value="except"> ยินยอม
-                       
+                        <p style="font-size: 18px;">- ข้าพเจ้าขอยืนยันว่าข้อมูลที่ระบุเป็นความจริงทุกประการ มิได้แอบอ้างอันเป็นเหตุให้ผู้อื่นได้รับความเสียหาย</p>
+                        <p style="font-size: 18px;">- ข้าพเจ้าได้ตรวจสอบข้อมูลอย่างระเอียด รอบคอบ ก่อนที่จะทำการบันทึกเรียบร้อยแล้ว</p>
                     </div>
                     <div class="except">
                         <a id="except-button" class="hover-button" style="color: white;" onclick="sendInfor()">ส่งข้อมูล</a> 
@@ -68,35 +78,39 @@
             </div>
         </div>
         <div class="back-button">
-            <a id="back" class="hover-button" style="color: white; float: right;" href="calendar.html">กลับ</a>
+            <a id="back" class="hover-button" style="color: white; float: right;" href="menu.html">กลับ</a>
         </div>
     </div>
     <script>
         
         function sendInfor() {
+            // var register = document.getElementById('register');
+            var selectTime = document.getElementById("mySelect").value;
             var personid = document.getElementById('ssn').value;
             var fname = document.getElementById('fname').value;
             var lname = document.getElementById('lname').value;
-            var about = document.getElementsById('myTextarea').value;
-            console.log("id: "+personid +" name: "+fname +" "+ lname );
+            var textarea = document.getElementById('textarea').value;
+            
+            console.log(displayRadioValue()+" เวลา: " + selectTime + " id: "+ personid +" name: "+ fname +"  "+ lname + "อาการ: " + textarea
+            +displayCertify());
+
+             
         }
-
-        const ills = document.getElementsByClassName('there-is-ill')
-        const thereIsNoIllness = document.getElementById('there-is-no-ill')
-
-        for(const item of ills) {
-            item.onchange = () => {
-                thereIsNoIllness.checked = false
+        function displayRadioValue() { 
+                var register = document.getElementsByName('check'); 
+                for(var i = 0; i < register.length; i++) { 
+                    if(register[i].checked) 
+                        return "register status: "+ register[i].value ;
+                }
             }
-        }
 
-        thereIsNoIllness.onchange = (e) => {
-            for(const item of ills) {
-                item.checked = false
-            }
-        }
-        
-        
+        function displayCertify() {
+                var certify = document.getElementsByName('certify'); 
+                for(var i = 0; i < certify.length; i++) { 
+                    if(certify[i].checked) 
+                        return "ใบรับรองแพทย์  "+ certify[i].value;
+                }
+        }        
     </script>
 </body>
 </html>
