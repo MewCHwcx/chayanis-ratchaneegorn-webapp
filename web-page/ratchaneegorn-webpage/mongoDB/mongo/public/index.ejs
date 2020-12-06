@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta character="UTF-8">
+        <title>Problem4</title>
+    </head>
+    <body>
+        <h1>Remaining schedule</h1>
+        <table id="tab">
+                <tr><td>19-11-2020</td><td>K'Roof's talk</td></tr>
+        </table>
+        <form action="/schedule" method="POST">
+            <input type="text" name="date"  placeholder="date">
+            <input type="text" name="task" placeholder="task">
+            <button type="submit">Submit</button>
+        </form>9
+        <h2>Tasks</h2>
+        <ul>
+        <% for (var i = 0; i < tasks.length; i++) {%>
+            <li>
+                <span><%= tasks[i].date %></span>:
+                <span><%= tasks[i].task %></span>
+            </li>
+        <% } %>
+        </ul>
+    </body>
+</html>
