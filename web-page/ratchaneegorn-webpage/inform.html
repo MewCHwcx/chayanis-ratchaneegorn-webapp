@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>กรอกข้อมูล-ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</title>
-        <link rel="stylesheet" href="style/style.css">
-        <link rel="stylesheet" href="style/styleresponsive.css">
-        <link href="https://fonts.googleapis.com/css2?family=Mitr&family=Prompt&display=swap" rel="stylesheet">
-</head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กรอกข้อมูล-ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/styleresponsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&family=Prompt&display=swap" rel="stylesheet">
+</head>
+
 <body>
     <p id="lanChange">TH|EN</p>
     <div class="user-action">
@@ -15,8 +17,8 @@
         <button id="logout">Sign Out</button>
     </div>
     <div id="container-inform">
-        <div class="headText">ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</div> 
-        <div class="text">กรอกข้อมูลเบื้องต้น</div> 
+        <div class="headText">ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</div>
+        <div class="text">กรอกข้อมูลเบื้องต้น</div>
         <div class="main-inform">
             <div class="information">
                 <div class="check-use">
@@ -24,8 +26,11 @@
                     <input id="register" type="radio" name="check" value="no-register"> ไม่เคย
                     <input id="register" type="radio" name="check" value="register"> เคย
                 </div>
-                <div>เวลานัดหมาย
-                    <select style="width: 300px; border: 3px solid white; height: 30px; border-radius: 20px;" id="mySelect">
+                <div>วันและเวลานัดหมาย
+                    <label></label><br>
+                    <input type="date" name="date" value="2020-12-06" id="date_1">
+                    <select style="width: 300px; border: 3px solid white; height: 30px; border-radius: 20px;"
+                        id="mySelect">
                         <option value="09.00-10.00">09.00-10.00</option>
                         <option value="10.00-11.00">10.00-11.00</option>
                         <option value="11.00-12.00">11.00-12.00</option>
@@ -37,13 +42,20 @@
                         <option value="18.00-19.30">18.00-19.30</option>
                     </select>
                 </div>
-               
+                <div style="margin: 10px;">สถานที่
+                    <select style="width: 300px; border: 3px solid white; height: 30px; border-radius: 20px;"
+                    id="place">
+                        <option value="หน่วยปฐมภูมิที่ 1 หลังคอมเพล็ก">หน่วยปฐมภูมิที่ 1 หลังคอมเพล็ก</option>
+                        <option value="หน่วยปฐมภูมิที่ 2 หอแปดหลัง">หน่วยปฐมภูมิที่ 2 หอแปดหลัง</option>
+                        <option value="หน่วยปฐมภูมิที่ 3 บึงศรีฐาน">หน่วยปฐมภูมิที่ 3 บึงศรีฐาน</option>
+                    </select>
+                </div>
                 <div class="id-number">
-                        <label>เลขบัตรประชาชน :</label><br>
-                        <input type="number" id="ssn" value="">
+                    <label>เลขบัตรประชาชน :</label><br>
+                    <input type="number" id="ssn" value="">
                 </div>
                 <div class="input-name">
-                    
+
                     <div>
                         <label for="fname">ชื่อ : </label><br>
                         <input type="text" id="fname" value="">
@@ -59,7 +71,8 @@
                     <div><input type="checkbox" class="there-is-ill" name="emer2" value="emergency2">แขนขาอ่อนแรง</div>
                     <div><input type="radio" name="emer-no" id="there-is-no-ill" value="">ไม่มีอาการ</div></div>  -->
                 <div class="about-sym">
-                    อาการเบื้องต้น: <textarea input style="width: 400px; height: 100px;" type="text" id="textarea" value=""> </textarea>
+                    อาการเบื้องต้น: <textarea input style="width: 400px; height: 100px;" type="text" id="textarea"
+                        value=""></textarea>
                 </div>
                 <div class="certificate">
                     ต้องการใบรับรองแพทย์หรือไม่ :
@@ -68,11 +81,14 @@
                 </div>
                 <div class="verify">
                     <div>
-                        <p style="font-size: 18px;">- ข้าพเจ้าขอยืนยันว่าข้อมูลที่ระบุเป็นความจริงทุกประการ มิได้แอบอ้างอันเป็นเหตุให้ผู้อื่นได้รับความเสียหาย</p>
-                        <p style="font-size: 18px;">- ข้าพเจ้าได้ตรวจสอบข้อมูลอย่างระเอียด รอบคอบ ก่อนที่จะทำการบันทึกเรียบร้อยแล้ว</p>
+                        <p style="font-size: 18px;">- ข้าพเจ้าขอยืนยันว่าข้อมูลที่ระบุเป็นความจริงทุกประการ
+                            มิได้แอบอ้างอันเป็นเหตุให้ผู้อื่นได้รับความเสียหาย</p>
+                        <p style="font-size: 18px;">- ข้าพเจ้าได้ตรวจสอบข้อมูลอย่างระเอียด รอบคอบ
+                            ก่อนที่จะทำการบันทึกเรียบร้อยแล้ว</p>
                     </div>
                     <div class="except">
-                        <a id="except-button" class="hover-button" style="color: white;" onclick="sendInfor()">ส่งข้อมูล</a> 
+                        <a id="except-button" class="hover-button" style="color: white;"
+                            onclick="sendInfor()">ส่งข้อมูล</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +98,7 @@
         </div>
     </div>
     <script>
-        
+
         function sendInfor() {
             // var register = document.getElementById('register');
             var selectTime = document.getElementById("mySelect").value;
@@ -90,27 +106,30 @@
             var fname = document.getElementById('fname').value;
             var lname = document.getElementById('lname').value;
             var textarea = document.getElementById('textarea').value;
-            
-            console.log(displayRadioValue()+" เวลา: " + selectTime + " id: "+ personid +" name: "+ fname +"  "+ lname + "อาการ: " + textarea
-            +displayCertify());
+            var date = document.getElementById('date_1').value
+            var place = document.getElementById('place').value;
 
-             
+            console.log(displayRadioValue() + " วันที่: " + date + " เวลา: "+selectTime + " สถานที่: "+ place+" id: " + personid + " name: " + fname + "  " + lname + " อาการ: " + textarea
+                + displayCertify());
+
+
         }
-        function displayRadioValue() { 
-                var register = document.getElementsByName('check'); 
-                for(var i = 0; i < register.length; i++) { 
-                    if(register[i].checked) 
-                        return "register status: "+ register[i].value ;
-                }
+        function displayRadioValue() {
+            var register = document.getElementsByName('check');
+            for (var i = 0; i < register.length; i++) {
+                if (register[i].checked)
+                    return "register status: " + register[i].value;
             }
+        }
 
         function displayCertify() {
-                var certify = document.getElementsByName('certify'); 
-                for(var i = 0; i < certify.length; i++) { 
-                    if(certify[i].checked) 
-                        return "ใบรับรองแพทย์  "+ certify[i].value;
-                }
+            var certify = document.getElementsByName('certify');
+            for (var i = 0; i < certify.length; i++) {
+                if (certify[i].checked)
+                    return "ใบรับรองแพทย์  " + certify[i].value;
+            }
         }        
     </script>
 </body>
+
 </html>
