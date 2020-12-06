@@ -32,16 +32,18 @@
                 var request = gapi.client.oauth2.userinfo.get({
                     'userId': 'me'
                 });
+                console.log(gapi.auth2.getAuthInstance().currentUser)
                 request.execute(function (resp) {
+                    console.log(resp);
                     // Display the user details
-                    var profileHTML = `Name: ${resp.name}` + ` Email: ${resp.email}`;
-                    if (profileHTML !== null) {
-                        var redirect = confirm(profileHTML);
+                    // var profileHTML = `Name: ${resp.name}` + ` Email: ${resp.email}`;
+                    // if (profileHTML !== null) {
+                    //     var redirect = confirm(profileHTML);
 
-                        if (redirect) {
-                            window.location.href = 'menu.html';
-                        }
-                    }
+                    //     if (redirect) {
+                    //         window.location.href = 'menu.html';
+                    //     }
+                    // }
                 });
             });
         }
