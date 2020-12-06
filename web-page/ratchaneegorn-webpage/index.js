@@ -1,20 +1,16 @@
 const fs = require('fs');
 const readline = require('readline');
 const { google } = require('googleapis');
+const { resolve } = require('path');
+const { rejects } = require('assert');
 
 // If modifying these scopes, delete token.json.
-const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly'];
+const SCOPES = ['https://www.googleapis.com/auth/calendar'];
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
 const TOKEN_PATH = 'token.json';
 
-// Load client secrets from a local file.
-fs.readFile('credentials.json', (err, content) => {
-    if (err) return console.log('Error loading client secret file:', err);
-    // Authorize a client with credentials, then call the Google Calendar API.
-    authorize(JSON.parse(content), listEvents);
-});
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -22,17 +18,22 @@ fs.readFile('credentials.json', (err, content) => {
  * @param {Object} credentials The authorization client credentials.
  * @param {function} callback The callback to call with the authorized client.
  */
-function authorize(credentials, callback) {
-    const { client_secret, client_id, redirect_uris } = credentials.web;
-    const oAuth2Client = new google.auth.OAuth2(
-        client_id, client_secret, redirect_uris[0]);
+function authorize() {
+    return new Promise((resolve, reject) => {
+        fs.readFile('credentials.json', (err, content) => {
+            if (err) return console.log('Error loading client secret file:', err);
+            const { client_secret, client_id, redirect_uris } = JSON.parse(content).web;
+            const oAuth2Client = new google.auth.OAuth2(
+                client_id, client_secret, redirect_uris[0]);
 
-    // Check if we have previously stored a token.
-    fs.readFile(TOKEN_PATH, (err, token) => {
-        if (err) return getAccessToken(oAuth2Client, callback);
-        oAuth2Client.setCredentials(JSON.parse(token));
-        callback(oAuth2Client);
-    });
+            // Check if we have previously stored a token.
+            fs.readFile(TOKEN_PATH, (err, token) => {
+                if (err) return getAccessToken(oAuth2Client, callback);
+                oAuth2Client.setCredentials(JSON.parse(token));
+                resolve(oAuth2Client)
+            })
+        });
+    })
 }
 
 /**
@@ -92,3 +93,49 @@ function listEvents(auth) {
         }
     });
 }
+
+var event = {
+    'summary': 'Google I/O 2015',
+    'location': '800 Howard St., San Francisco, CA 94103',
+    'description': 'A chance to hear more about Google\'s developer products.',
+    'start': {
+      'dateTime': '2020-12-07T09:00:00+07:00',
+      'timeZone': 'Asia/Bangkok'
+    },
+    'end': {
+      'dateTime': '2020-12-07T10:00:00+07:00',
+      'timeZone': 'Asia/Bangkok'
+    },
+    'attendees': [
+      {'email': 's.ratchaneegron@kkumail.com'},
+      {'email': 'wbm.chayanis@gmail.com'}
+    ],
+    'reminders': {
+      'useDefault': false
+    }
+  };
+
+function addEvent(auth, event) {
+    const calendar = google.calendar({ version: 'v3', auth });
+    calendar.events.insert({
+        auth,
+        calendarId: 'primary',
+        resource: event
+    }, (err, res) => {
+        console.log(err)
+    })
+}
+
+authorize()
+.then(oAuth2Client => {
+    addEvent(oAuth2Client, event)
+    listEvents(oAuth2Client)
+})
+
+app.post("/addevent", (req, res) => {
+    const name = req.body.name
+    authorize()
+    .then(oAuth2Client => {
+        addEvent(oAuth2Client, )
+    })
+})

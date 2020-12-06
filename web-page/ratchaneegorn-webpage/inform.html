@@ -19,7 +19,7 @@
     <div id="container-inform">
         <div class="headText">ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123 มหาวิทยาลัยขอนแก่น</div>
         <div class="text">กรอกข้อมูลเบื้องต้น</div>
-        <div class="main-inform">
+        <form action="/addevent" class="main-inform" method="POST">
             <div class="information">
                 <div class="check-use">
                     เคยเข้าใช้บริการหน่วยปฐมภูมินักศึกษา :
@@ -28,8 +28,8 @@
                 </div>
                 <div>วันและเวลานัดหมาย
                     <label></label><br>
-                    <input type="date" name="date" value="2020-12-06" id="date_1">
-                    <select style="width: 300px; border: 3px solid white; height: 30px; border-radius: 20px;"
+                    <input type="date" name="date" id="date_1">
+                    <select name="time" style="width: 300px; border: 3px solid white; height: 30px; border-radius: 20px;"
                         id="mySelect">
                         <option value="09.00-10.00">09.00-10.00</option>
                         <option value="10.00-11.00">10.00-11.00</option>
@@ -43,8 +43,8 @@
                     </select>
                 </div>
                 <div style="margin: 10px;">สถานที่
-                    <select style="width: 300px; border: 3px solid white; height: 30px; border-radius: 20px;"
-                    id="place">
+                    <select name="place" style="width: 300px; border: 3px solid white; height: 30px; border-radius: 20px;"
+                        id="place">
                         <option value="หน่วยปฐมภูมิที่ 1 หลังคอมเพล็ก">หน่วยปฐมภูมิที่ 1 หลังคอมเพล็ก</option>
                         <option value="หน่วยปฐมภูมิที่ 2 หอแปดหลัง">หน่วยปฐมภูมิที่ 2 หอแปดหลัง</option>
                         <option value="หน่วยปฐมภูมิที่ 3 บึงศรีฐาน">หน่วยปฐมภูมิที่ 3 บึงศรีฐาน</option>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="back-button">
             <a id="back" class="hover-button" style="color: white; float: right;" href="menu.html">กลับ</a>
         </div>
@@ -108,11 +108,8 @@
             var textarea = document.getElementById('textarea').value;
             var date = document.getElementById('date_1').value
             var place = document.getElementById('place').value;
-
-            console.log(displayRadioValue() + " วันที่: " + date + " เวลา: "+selectTime + " สถานที่: "+ place+" id: " + personid + " name: " + fname + "  " + lname + " อาการ: " + textarea
-                + displayCertify());
-
-
+            // console.log(displayRadioValue() + " วันที่: " + date + " เวลา: " + selectTime + " สถานที่: " + place + " id: " + personid + " name: " + fname + "  " + lname + " อาการ: " + textarea
+            //     + displayCertify());
         }
         function displayRadioValue() {
             var register = document.getElementsByName('check');
@@ -129,6 +126,8 @@
                     return "ใบรับรองแพทย์  " + certify[i].value;
             }
         }        
+        
+
     </script>
 </body>
 
