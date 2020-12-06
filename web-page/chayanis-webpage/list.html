@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8" />
     <title>ระบบนัดหมายหน่วยปฐมภูมินักศึกษา123</title>
     <link rel="stylesheet" href="styles/list.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -18,13 +18,8 @@
             <div class="head-kku">
                 <div>
                     <h2>ระบบนัดหมายหน่วยปฐมภูมินักศึกษา 123 มหาวิทยาลัยขอนแก่น</h2>
-                    <h2 class="txt-doctor">สถานะผู้ป่วย</h2>
+                    <h2 class="txt-doctor">ตารางนัดผู้ป่วย</h2>
                 </div>
-
-
-            </div>
-            <div class="trans">
-                <p id="trans"> TH</a> | <a href="#">EN</a></p>
             </div>
         </div>
         <div class="container2">
@@ -32,153 +27,98 @@
                     <option value="complex">ศูนย์บริการนักศึกษาที่ 1 (หลังคอมเพล็ก) </option>
                     <option value="dorm8">ศูนย์บริการนักศึกษาที่ 2 (หอแปดหลัง)</option>
                 </select></div>
-            <div class="month">
-                <select name="month" id="month" onchange="getMonth()">
-                    <option value="1">มกราคม</option>
-                    <option value="2">กุมภาพันธ์</option>
-                    <option value="3">มีนาคม</option>
-                    <option value="4">เมษายน</option>
-                    <option value="5">พฤษภาคม</option>
-                    <option value="6">มิถุนายน</option>
-                    <option value="7">กรกฎาคม</option>
-                    <option value="8">สิงหาคม</option>
-                    <option value="9">กันยายน</option>
-                    <option value="10" selected="selected">ตุลาคม</option>
-                    <option value="11">พฤศจิกายน</option>
-                    <option value="12">ธันวาคม</option>
-                </select>
-                <script>
-                    function getMonth(n) {
-                        var name = document.getElementById("month");
-                        var d = new Date();
-                        var m = d.getMonth() + 1;
-                        if (name.value == m) {
-                            
-                        }
-                    }
-                </script>
+            <div class="button">
+                <button class="add-button">เพิ่ม</button>
+                <button class="del-button">ยกเลิก</button>
             </div>
-            <div class="back">
-                <a href="menuPage.html"><button id="button-back">ย้อนกลับ</button></a>
             </div>
-        </div>
+            
         <div class="container3">
             <div class="info">
                 <table>
                     <th>ลำดับ</th>
-                    <th>เวลานัด</th>
+                    <th>วันที่นัด</th>
+                    <th>เวลา</th>
+                    <th>ชื่อ</th>
                     <th>อาการ</th>
-                    <th>แพทย์</th>
-                    <th>สถานะ</th>
-                    <th>สิ้นสุดการรักษา</th>
+                    <th>ขอใบรับรองแพทย์</th>
                     <tr class="selected">
                         <td>1</td>
+                        <td>7-12-2020</td>
                         <td>09.00</td>
-                        <td>ปวดหัว</td>
-                        <td>นพ.สุดปัง</td>
-                        <td id="finish">เสร็จสิ้น</td>
-                        <td>09.15</td>
+                        <td>กตัญญู กตเวที</td>
+                        <td>ปวดหัว ตัวร้อน</td>
+                        <td>ใช่</td>
                     </tr>
                     <tr>
                         <td>2</td>
+                        <td>7-12-2020</td>
                         <td>09.00</td>
-                        <td>ปวดตัว</td>
-                        <td>นพ.สุดปัง</td>
-                        <td id="finish">เสร็จสิ้น</td>
-                        <td>09.30</td>
+                        <td>ไดโนเศร้า</td>
+                        <td>ตัวร้อน</td>
+                        <td>ไม่</td>
                     </tr>
                     <tr class="selected">
                         <td>3</td>
-                        <td>09.00</td>
-                        <td>ปวดขา</td>
-                        <td>นพ.สุดปัง</td>
-                        <td id="wait">รอคิว</td>
-                        <td> <input type="text" id="write"> <button id="save-as">บันทึก</button></td>
+                        <td>7-12-2020</td>
+                        <td>11.00</td>
+                        <td>โรบิน ฮู้ด</td>
+                        <td>ปวดหลัง</td>
+                        <td>ไม่</td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td>09.00</td>
-                        <td>ปวดตา</td>
-                        <td>นพ.สุดปัง</td>
-                        <td id="cancle">ยกเลิก</td>
-                        <td>-</td>
+                        <td>7-12-2020</td>
+                        <td>13.00</td>
+                        <td>น.ส.นอนนาน ดีดี</td>
+                        <td>ปวดหัว ตัวร้อน</td>
+                        <td>ใช่</td>
                     </tr>
                     <tr class="selected">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>5</td>
+                        <td>7-12-2020</td>
+                        <td>13.00</td>
+                        <td>น.ส.นอนน้อย ดีดี</td>
+                        <td>ปวดหัว</td>
+                        <td>ไม่</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>6</td>
+                        <td>7-12-2020</td>
+                        <td>14.00</td>
+                        <td>นัมโดซาน</td>
+                        <td>ปวดท้อง</td>
+                        <td>ใช่</td>
                     </tr>
                     <tr class="selected">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>7</td>
+                        <td>8-12-2020</td>
+                        <td>10.00</td>
+                        <td>จินฮยอก</td>
+                        <td>ตาบวม</td>
+                        <td>ไม่</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>8</td>
+                        <td>8-12-2020</td>
+                        <td>10.00</td>
+                        <td>นายเอกกี้</td>
+                        <td>หายใจไม่ออก</td>
+                        <td>ใช่</td>
                     </tr>
                     <tr class="selected">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr class="selected">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>9</td>
+                        <td>8-12-2020</td>
+                        <td>11.00</td>
+                        <td>น.ส.นอนนะ ดีดี</td>
+                        <td>ปวดท้องน้อย</td>
+                        <td>ไม่</td>
                     </tr>
                 </table>
-                <script>
-                    var libButton = document.getElementById('save-as');
-                    var libIt = function () {
-                        var nounDiv = document.getElementById("save-as").value;
-                        alert(`${nounDiv} ถูกบันทึกเรียบร้อยแล้ว`);
-                    };
-                    libButton.addEventListener('click', libIt);
-                  
-                </script>
             </div>
         </div>
+    </div>
+
 </body>
 
 </html>
