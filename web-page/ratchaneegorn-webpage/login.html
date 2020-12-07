@@ -34,7 +34,8 @@
                 });
                 console.log(gapi.auth2.getAuthInstance().currentUser)
                 request.execute(function (resp) {
-                    console.log(resp);
+                    // console.log(resp);
+                    // window.location.href = "/"
                     // Display the user details
                     // var profileHTML = `Name: ${resp.name}` + ` Email: ${resp.email}`;
                     // if (profileHTML !== null) {
@@ -43,7 +44,7 @@
                     //     if (redirect) {
                     //         window.location.href = 'menu.html';
                     //     }
-                    // }
+                    //}
                 });
             });
         }
@@ -54,11 +55,11 @@
         
     </script>
 </head>
-<div class="container">
+<div class="container" style="background-color: yellow;">
     <div class="container-header">
-        <div class="logo"><img src="image/logo.jpg" class="img-logo"></div>
+        <div class="logo"><img style="border-radius: 20px; width: 180px; height: 180px;" src="image/logo.jpg" class="img-logo"></div>
         <div class="head-kku">
-            <h2>ระบบนัดหมายหน่วยปฐมภูมินักศึกษา 123</h2>
+            <h2 style="text-align: center; font-size: 25px;">ระบบนัดหมายหน่วยปฐมภูมินักศึกษา 123</h2>
         </div>
         <!-- Display Google sign-in button -->
         <div class="button-login">

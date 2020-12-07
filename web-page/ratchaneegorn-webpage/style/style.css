@@ -1,8 +1,9 @@
 
 body {
+    font-family: 'Prompt', sans-serif;
     background-color: #ffdd94;
     background-image: linear-gradient(to bottom right, #fad874,#ffa0bed5);
-    font-size: 20px;
+    font-size: 12px;
     min-height: 100vh;
     margin: 0px 5%;
     display: flex;
@@ -140,16 +141,19 @@ body {
     text-align: center;
     flex-direction: column;
     border-radius: 30px;
-    box-shadow: 0px 2px 4px 0px #f9fadc ;
-    background-image: linear-gradient(110deg, #fcca04 60%, #fff9da 60%);
+   
+    /* box-shadow: 0px 2px 4px 0px #f9fadc ;
+    background-image: linear-gradient(110deg, #fcca04 60%, #fff9da 60%); */
     margin: 0px 30px 30px 30px;
 }
 .card-button{
     text-align: right;;
 }
 .card-show-detail {
-    text-align: left;
-    font-size: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
     flex-direction: column;
     display: flex;
 }
@@ -158,13 +162,18 @@ body {
     text-align: center;
 }
 .detail {
-    font-size: 30px;
+    font-size: 20px;
+    width: 900px;
+    display: flex;
+    align-items: start;
     flex-direction: column;
+    justify-content: center;
     text-align: left;
-    margin: 80px 200px 0px 200px;
     border-radius: 40px;
     box-shadow: 4px 4px 4px #012c0167;
     background-color:#73ccd5;
+    margin: auto;
+    
 }
 .link-map {
     font-size: 16px;
@@ -181,12 +190,12 @@ body {
     margin: 20px;
 }
 .card-show-detail label{
-    background-color: white;
-    box-shadow: 4px 4px 4px rgba(122, 122, 150, 0.541);
+    background-color: white ;
+    /* box-shadow: 4px 4px 4px rgba(122, 122, 150, 0.541); */
     border-radius: 20px;
     font-size: 25px;
     letter-spacing: 1px;
-    margin: 25px;
+    margin: 5px;
     padding: 10px 60px 10px 60px;
 }
 #container-inform {
@@ -335,4 +344,34 @@ textarea {
     box-shadow: 5px black;
     margin: 10px;
     padding: 5px;   
+}
+#place-btn {
+    background-color: #3f519e;
+    border: 1px solid rgb(199, 199, 199);
+    margin: 10px;
+    padding: 5px;   
+    margin-right: auto;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 20px;
+    outline: none;
+    text-decoration-line:none;
+    cursor: pointer;
+}
+#back-btn {
+    background-color: #3f519e;
+    border: 1px solid rgb(199, 199, 199);
+    margin: 10px;
+    padding: 10px 30px 10px 30px;   
+    margin-right: auto;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 20px;
+    outline: none;
+    text-decoration-line:none;
+    cursor: pointer;
+}
+#place-btn {
+    margin: 10px;
+    padding: 10px 30px 10px 30px;   
 }

@@ -130,9 +130,6 @@ app.use("/",express.static(__dirname+"/"))
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/menu.html")
 })
-// app.get("/", (req, res) => {
-//     res.sendFile(__dirname + "/inform.html")
-// })
 
 app.get("/appointments", (req,res) => {
     res.sendFile(__dirname + "/list.html")
@@ -146,9 +143,21 @@ app.get("/getAppointments", (req,res) => {
     })
 })
 
+app.get("/showdetail", (req,res) => {
+    res.sendFile(__dirname + "/appoint.html")
+})
+
+app.get("/showAppointments", (req,res) => {
+    authorize()
+    .then(oAuth2Client => {
+        listEvents(oAuth2Client)
+        .then(data => res.json(data))
+    })
+})
+
 app.post("/addevent", (req, res) => {
     const newEvent = {
-        summary: "นัดหมายที่ 1",
+        summary: "นัดหมาย",
         location: `${req.body.place}`,
         description: `
             เลขประจำตัวประชาชน: ${req.body.ssn}
